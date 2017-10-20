@@ -1,0 +1,5 @@
+<h1>Weather box</h1>
+
+<app-weather-search #weatherSearch (onSearchDataChange)="searchDataChanged($event)"></app-weather-search>
+
+<app-weather-box #weatherBox [searchData]="currentSearch"></app-weather-box>

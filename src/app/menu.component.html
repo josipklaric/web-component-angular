@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="nav nav-pills">
+      <li routerLinkActive="active"> <a [routerLink]="['/weather']" >Weather - Angular</a></li>
+      <li routerLinkActive="active"> <a [routerLink]="['/weather-web-comp']" >Weather - Web Component</a></li>
+      <li>
+        <a>
+          <app-weather-bar [currentWeatherData]="currentWeatherData"></app-weather-bar>
+        </a>
+        <!-- <a><span>Zagreb</span> <span class="badge">11</span>&deg;C</a> -->
+      </li>
+    </ul>
+  </div>
+</div>
