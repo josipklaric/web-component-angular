@@ -49,7 +49,3 @@ interface BroadcastEvent {
   data?: any;
 }
 
-interface WeatherData {
-  city: string;
-  temp: number;
-}
