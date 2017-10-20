@@ -17,7 +17,6 @@ export class WeatherSearchComponent implements OnInit {
 
   onBlur(input: HTMLInputElement) {
     console.log('>> app-weather-search > onBlur fired! -> city: ' + this.cityName);
-    // this.onSearchDataChange.emit({ 'city': this.cityName, 'temp': this.temp });
     this.onSearchDataChange.emit(this.cityName);
   }
   ngOnInit() {
