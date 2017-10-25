@@ -12,7 +12,6 @@ export class WeatherWebCompComponent implements OnInit {
   currentSearch: any;
 
   searchDataChanged(searchData: any) {
-    console.log('>> weather-web-comp -> searchDataChanged -> searchData: ' + JSON.stringify(searchData));
     this.currentSearch = searchData;
   }
 

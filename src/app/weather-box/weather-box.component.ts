@@ -22,9 +22,7 @@ export class WeatherBoxComponent implements OnInit, OnChanges, AfterViewInit {
   temp: string = '';
   private _searchData: any;
 
-  constructor(public _sharedService: SharedService, private http: Http) {
-    console.log('>> weather-box -> constructor -> _sharedService: ' + _sharedService);
-   }
+  constructor(public _sharedService: SharedService, private http: Http) {   }
 
   @ViewChild('weatherBox') el: ElementRef;
 
@@ -48,18 +46,17 @@ export class WeatherBoxComponent implements OnInit, OnChanges, AfterViewInit {
   }
 
   updateWeatherBar(data: any) {
-    console.log('>> weather-box -> updateWeatherBar called -> arg: ' + JSON.stringify(data));
     this._sharedService.broadcast('weatherChange', { 'city': this.cityName, 'temp': data.detail.temperature });
   }
 
   ngAfterViewInit() {
-    console.log('>> weather-box -> ngAfterViewInit -> ' + this.el.nativeElement.tagName);
     this.el.nativeElement.addEventListener('contentChanged', this.updateWeatherBar.bind(this));
   }
+
   ngOnChanges(changes: SimpleChanges) {
-    console.log('>> weather-box -> ngOnChanges -> changes: ' + JSON.stringify(changes));
     this.cityName = changes.searchData.currentValue;
   }
+  
   ngOnInit() {
   }
 

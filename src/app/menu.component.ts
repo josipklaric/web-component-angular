@@ -10,12 +10,6 @@ export class MenuComponent implements OnInit {
 
   constructor() { }
 
-  currentWeatherData: any;
-
-  weatherDataChanged(weatherData: any): void {
-    this.currentWeatherData = weatherData;
-  }
-
   ngOnInit() {
   }
 
