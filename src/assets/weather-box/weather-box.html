@@ -1,5 +1,5 @@
+
 <template>
-    <!-- <link rel="stylesheet" href="assets/weather-box/weather-box.css"> -->
     <style>
         :host {
             color: rgb(105, 105, 105);
@@ -126,6 +126,7 @@
         .icon-47:before { content: "S"; }
 
     </style>
+
     <div class="container">
         <h2 id="city">City</h2>
         <h6 id="location"></h6>
@@ -138,10 +139,13 @@
             <li id="wind">0</li>
         </ul>
         <ul>
-            <li id="copyright" style="padding:0;"><a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/purple.png" width="134" height="29"/> </a></li>
+            <li id="copyright" style="padding:0;">
+                <a href="https://www.yahoo.com/?ilc=401" target="_blank"> 
+                    <img src="https://poweredby.yahoo.com/purple.png" width="134" height="29"/> 
+                </a>
+            </li>
             <li style="display:none;" ></li>
         </ul>
-        <img style="display:none;" id="icon" src="https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/30d.png" />
     </div>
 </template>
 
