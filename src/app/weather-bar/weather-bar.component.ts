@@ -1,10 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { SharedService } from './../shared.service';
 
 @Component({
   selector: 'app-weather-bar',
   templateUrl: './weather-bar.component.html',
   styles: []
+  // encapsulation: ViewEncapsulation.Emulated
 })
 export class WeatherBarComponent implements OnInit {
 
