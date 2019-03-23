@@ -56,7 +56,7 @@ export class WeatherBoxComponent implements OnInit, OnChanges, AfterViewInit {
   ngOnChanges(changes: SimpleChanges) {
     this.cityName = changes.searchData.currentValue;
   }
-  
+
   ngOnInit() {
   }
 

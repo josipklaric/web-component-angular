@@ -12,7 +12,7 @@ export class WeatherComponent implements OnInit {
   currentSearch: any;
 
   searchDataChanged(searchData: any) {
-    console.log('>> weather -> searchDataChanged -> searchData: ' + JSON.stringify(searchData));
+    // console.log('>> weather -> searchDataChanged -> searchData: ' + JSON.stringify(searchData));
     this.currentSearch = searchData;
   }
 

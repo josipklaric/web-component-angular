@@ -5,7 +5,7 @@ import { SharedService } from './../shared.service';
   selector: 'app-weather-bar',
   templateUrl: './weather-bar.component.html',
   styles: []
-  // encapsulation: ViewEncapsulation.Emulated
+  // , encapsulation: ViewEncapsulation.Emulated
 })
 export class WeatherBarComponent implements OnInit {
 
@@ -13,8 +13,8 @@ export class WeatherBarComponent implements OnInit {
 
   constructor(private _sharedService: SharedService) {
     this.weatherData = {
-      'city': 'Tuhelj',
-      'temp': 33
+      'city': 'Zagreb',
+      'temp': 21
     };
     this._sharedService.on('weatherChange').subscribe(message => {
       // console.log('>> weather-bar -> weatherChange -> message: ' + JSON.stringify(message));

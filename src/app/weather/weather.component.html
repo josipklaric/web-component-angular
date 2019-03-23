@@ -1,5 +1,37 @@
 <h1>Weather box</h1>
 
-<app-weather-search #weatherSearch (onSearchDataChange)="searchDataChanged($event)"></app-weather-search>
+<div class="well">
+    <p>
+            This sample demonstrates hosting web component (assets\weather-box) inside Angular component (weather-box).
+    </p>
+    <p>
+        
+    </p>
+</div>
 
-<app-weather-box #weatherBox [searchData]="currentSearch"></app-weather-box>
+<div class="row">
+    <div class="col-md-6">
+        <h2>Page structure</h2>
+        <ul>
+            <li>There are 3 Angular components present on this page:
+                <ul>
+                    <li>Search component with input field</li>
+                    <li>Weather box component displaying weather info</li>
+                    <li>Navbar weather component showing only city and temperature</li>
+                </ul>
+            </li>
+            <li>Communication between components is done through parent component in this case</li>
+        </ul>
+
+        <h2>Exercitation sint cupidatat esse pariatur consectetur ut.</h2>
+        <p>Lorem in labore incididunt ad aute nostrud Lorem nulla ut. Ullamco excepteur mollit reprehenderit Lorem aliquip ad laboris labore elit aute non id tempor. Minim aliquip veniam ex sint commodo velit cupidatat.</p>
+        <p>Velit elit nulla mollit cillum aute ex ea eu ipsum. Aliquip exercitation adipisicing id commodo do labore non consequat culpa ad culpa minim magna nisi. Esse elit cupidatat officia minim magna amet elit eiusmod. Cillum pariatur irure ea velit do consequat magna ex esse aliquip adipisicing ipsum deserunt. Aute adipisicing nostrud qui ut est incididunt aliquip ea proident aute. Aliqua dolore ea consectetur Lorem dolor fugiat tempor. Consectetur occaecat exercitation amet id esse consequat incididunt dolor.</p>
+    </div>
+    <div class="col-md-6">
+        
+        <app-weather-search #weatherSearch (onSearchDataChange)="searchDataChanged($event)"></app-weather-search>
+        
+        <app-weather-box #weatherBox [searchData]="currentSearch"></app-weather-box>
+
+    </div>
+</div>
