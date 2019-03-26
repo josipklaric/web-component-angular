@@ -33,7 +33,7 @@ export class SharedService {
 
     let queryText = city;
     if (country.length > 0) {
-      queryText = city + ', ' + country;
+        queryText = city + ', ' + country;
     }
     console.log('>> getWeatherData -> queryText: ' + queryText);
     return this._http.get(this.yahooUrl1 + encodeURIComponent(this.yahooUrl2 + queryText + this.yahooUrl3))

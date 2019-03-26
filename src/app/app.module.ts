@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu.component';
-import { WeatherNowComponent } from './weather-now/weather-now.component';
+//import { WeatherNowComponent } from './weather-now/weather-now.component';
 import { WeatherBoxComponent } from './weather-box/weather-box.component';
 import { ROUTING } from './app.routing';
 import { SharedService } from './shared.service';
@@ -18,7 +18,7 @@ import { WeatherComponent } from './weather/weather.component';
   declarations: [
     AppComponent,
     MenuComponent,
-    WeatherNowComponent,
+    //WeatherNowComponent,
     WeatherBoxComponent,
     WeatherBarComponent,
     WeatherSearchComponent,
