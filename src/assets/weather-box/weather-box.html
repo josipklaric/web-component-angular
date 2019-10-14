@@ -6,7 +6,7 @@
         }
         i {
             color: #fff;
-            font-family: weather;
+            font-family: MeteoconsRegular;
             font-size: 1.5em;
             font-weight: normal;
             font-style: normal;
@@ -177,10 +177,6 @@
             <li id="description" class="description">Clear</li>
             <li id="wind">0</li>
         </ul>
-        <ul>
-            <li id="copyright" style="padding:0;"><a href="https://www.apixu.com/" title="Free Weather API"><img src='//cdn.apixu.com/v4/images/logo.png' alt="Weather data by Apixu.com" border="0"></a></li>
-            <li style="display:none;" ></li>
-        </ul>
     </div>
 </template>
 
@@ -224,13 +220,14 @@
 
         render() {
             this.shadowRoot.querySelector('#city').textContent = this.city != null ? this.city : defaultCity;
-            const key = '5469a443a0274cbd98d224636192203';
+            //const key = '5469a443a0274cbd98d224636192203';
+            const apiKey = '90cb39e74269f00b80db07ff04328a39';
 
             let query = this.city;
             if(query == null || query.length == 0){
                 query = defaultCity;
             }
-            let url = `http://api.apixu.com/v1/current.json?key=${key}&q=${query}&lang=sr`;
+            let url = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${this.city}`; //&lang=en`;
 
             fetch(url)
                 .then((result) => { 
@@ -238,8 +235,7 @@
                 })
                 .then((result) => {
                     
-                    console.log('>> web component -> Fetch result: ');
-                    console.log(result);
+                    console.log('>> web component -> Fetch result: ', result);
                     if(!result)
                     {
                         console.log('>> web component -> Fetch result: no results');
@@ -249,15 +245,15 @@
                     this.shadowRoot.querySelector('#city').textContent = result.location.name;
                     this.shadowRoot.querySelector('#location').textContent = `${result.location.region}, ${result.location.country}`;
                     this.shadowRoot.querySelector('.container').style.background = this.background;
-                    this.shadowRoot.querySelector('#temp').textContent = `${result.current.temp_c}°`;
-                    this.shadowRoot.querySelector('#code').className = `icon-${result.current.condition.code}`;
-                    this.shadowRoot.querySelector('#description').textContent = result.current.condition.text;
-                    this.shadowRoot.querySelector('#wind').textContent = `${result.current.wind_kph} km/h`;
+                    this.shadowRoot.querySelector('#temp').textContent = `${result.current.temperature}°`;
+                    this.shadowRoot.querySelector('#code').className = "icon-" + result.current.weather_code + (result.current.is_day === 0 ? "n" : "d");
+                    this.shadowRoot.querySelector('#description').textContent = result.current.weather_descriptions;
+                    this.shadowRoot.querySelector('#wind').textContent = `${result.current.wind_speed} km/h`;
 
                     this.dispatchEvent(new CustomEvent('contentChanged', {
                         detail: {
-                            temperature: result.current.temp_c,
-                            description: result.current.condition.text
+                            temperature: `${result.current.temperature}°C`,
+                            description: result.current.weather_descriptions
                         }
                     }))
                 })
