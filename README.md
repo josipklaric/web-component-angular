@@ -1,5 +1,8 @@
 # WeatherBoxAngular
 
+This project is showing how to use web components in Angular. Look for assets\weather-box\weather-box.html for web component implementation.
+It uses old HTML Imports standard that is implemented in Chrome only, but will be removed soon (March 2020).
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.4.
 
 ## Development server
